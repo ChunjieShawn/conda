@@ -41,10 +41,10 @@ class OSSAdapter(BaseAdapter):
         self._proxies, self._common_proxies = {}, {}
         if http_proxy and len(http_proxy) > 0:
             self._proxies["http"] = http_proxy.split("://")[1]
-            self._common_proxies["http_proxy"] = http_proxy.split("://")[1]
+            self._common_proxies["http_proxy"] = http_proxy
         if https_proxy and len(https_proxy) > 0:
             self._proxies["https"] = https_proxy.split("://")[1]
-            self._common_proxies["https_proxy"] = https_proxy.split("://")[1]
+            self._common_proxies["https_proxy"] = https_proxy
 
     def send(self, request, stream=None, timeout=None, verify=None, cert=None, proxies=None):
         resp = Response()
